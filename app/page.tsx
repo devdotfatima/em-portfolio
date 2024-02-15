@@ -9,8 +9,8 @@ export default function Home() {
 				<FaInstagram className="text-xl" />
 				<FaPinterest className="text-xl" />
 			</aside>
-			<div className="banner flex flex-col items-center justify-between min-h-screen min-w-full py-10 px-6">
-				<header className="flex justify-between  items-center w-full sm:w-10/12">
+			<div className="banner relative flex flex-col items-center justify-between min-h-screen max-h-screen min-w-full py-10 px-6">
+				<header className="flex justify-between fixed bg-white top-0 py-4 sm:py-10 z-40 px-2 items-center w-full sm:w-10/12">
 					{/* <div className="bg-black rounded-full px-6 py-4  ">
 						<p className="text-xl flex justify-center items-center font-thin cursor-pointer">
 							X
@@ -20,7 +20,7 @@ export default function Home() {
 						Emelina
 					</div>
 					<div>
-						<button className=" px-6 py-3 bg-black rounded-full text-md tracking-tight text-white ">
+						<button className="py-2 px-3 sm:px-6 sm:py-3 bg-black rounded-full text-md tracking-tight text-white ">
 							Get in touch
 						</button>
 					</div>
