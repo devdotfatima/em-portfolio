@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Chip } from "primereact/chip";
 import { Galleria } from "primereact/galleria";
+import { StyleClass } from "primereact/styleclass";
 import React, { useRef, useState } from "react";
 import { imageData } from "../utils/consts";
 import { ImageData } from "../utils/types";
@@ -10,6 +11,8 @@ const MasnoryGrid = () => {
 	const [activeIndex, setActiveIndex] = useState<number>(0);
 	const galleria = useRef<Galleria>(null);
 	const [selectedChip, setSelectedChip] = useState("All");
+	const openBtnRef = useRef(null);
+	const closeBtnRef = useRef(null);
 
 	const responsiveOptions = [
 		{
@@ -133,38 +136,29 @@ const MasnoryGrid = () => {
 			<article className=" w-full mt-20">
 				{filteredImages &&
 					filteredImages.map((image, index) => (
-						<div
-							key={index}
-							onClick={() => handleThumbnailClick(index)}
+						<StyleClass
+							nodeRef={openBtnRef}
+							selector=".box"
+							enterClassName="hidden"
+							enterActiveClassName="fadein"
 						>
-							<figure key={index}>
-								<figcaption>{image.caption}</figcaption>
+							<div
+								className=" flex justify-center items-center"
+								ref={openBtnRef}
+								key={index}
+								onClick={() => handleThumbnailClick(index)}
+							>
 								<Image
-									className=" cursor-pointer"
+									className=" cursor-pointer hover:scale-105 duration-300 ease-in w-11/12 mt-4"
 									src={image.src}
 									alt={`Image ${image.caption}`}
 									width={500} // Set your desired width
 									height={300} // Set your desired height
 								/>
-							</figure>
-						</div>
+							</div>
+						</StyleClass>
 					))}
 			</article>
-
-			{/* <article className=" w-full mt-20">
-				{filteredImages.map((item, index) => (
-					<figure key={index}>
-						<figcaption>{item.caption}</figcaption>
-						<Image
-							className=" cursor-pointer"
-							src={item.src}
-							alt={`Image ${item.caption}`}
-							width={500} // Set your desired width
-							height={300} // Set your desired height
-						/>
-					</figure>
-				))}
-			</article> */}
 		</section>
 	);
 };
