@@ -9,7 +9,6 @@ image {
   height: 100%;
 }
 .banner {
-  /* background-image: url("../public/pine_cone.jpeg"); */
   object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100%;
