@@ -6,7 +6,7 @@ import Masonry from "@mui/lab/Masonry";
 import { useTheme } from "@mui/material/styles";
 import Grow from "@mui/material/Grow";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { images } from "../utils/consts";
 import { ImageData } from "../utils/types";
 
@@ -56,7 +56,7 @@ const MasnoryGrid = () => {
 
   const itemTemplate = (item: ImageData) => {
     return (
-      <img
+      <Image
         src={item.src}
         alt={item.caption}
         style={{
@@ -71,7 +71,7 @@ const MasnoryGrid = () => {
 
   const thumbnailTemplate = (item: ImageData) => {
     return (
-      <img
+      <Image
         src={item.src}
         alt={item.caption}
         style={{
@@ -157,10 +157,9 @@ const MasnoryGrid = () => {
       <Masonry columns={columns} spacing={1}>
         {filteredImages &&
           filteredImages.map((image, index) => (
-            <Grow in={growAnimation}>
+            <Grow in={growAnimation} key={index}>
               <div
                 className=" flex justify-center cursor-pointer pointer-events-none sm:pointer-events-auto items-center"
-                key={index}
                 onClick={() => handleThumbnailClick(index)}
               >
                 <Image
