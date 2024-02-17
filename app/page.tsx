@@ -16,7 +16,7 @@ export default function Home() {
             </button>
           </div>
         </header>
-        <main className=" flex flex-col gap-32 md:gap-40 lg:gap-60 justify-center items-center mt-32 lg:mt-64 ">
+        <main className=" flex flex-col gap-28 sm:gap-32 md:gap-40 lg:gap-52 justify-center items-center mt-32 lg:mt-64 ">
           <section className="sm:w-10/12 mx-auto  lg:w-2/3 flex flex-col gap-4">
             <h2 className="text-4xl md:text-5xl font-bold font-serif tracking-wider">
               Photographer & Creator
